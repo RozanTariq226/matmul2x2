@@ -1,0 +1,44 @@
+# Tiny Tapeout project information.
+# NOTE: copy the info.yaml that comes with the Tiny Tapeout IHP Verilog template
+# and only edit the fields below, so the field names match the template version.
+yaml_version: 6
+
+project:
+  title:        "2x2 INT8 Matrix Multiplier"
+  author:       "Rozan Tariq"
+  discord:      ""
+  description:  "C = A x B for 2x2 signed 8-bit matrices using one shared multiplier (8 cycles), 17-bit exact results"
+  language:     "Verilog"
+  clock_hz:     10000000
+  tiles:        "2x2"          # start here; shrink after you see utilisation in the real flow
+  top_module:   "tt_um_matmul2x2_int8"
+  source_files:
+    - "project.v"
+
+pinout:
+  ui[0]: "DATA0"
+  ui[1]: "DATA1"
+  ui[2]: "DATA2"
+  ui[3]: "DATA3"
+  ui[4]: "DATA4"
+  ui[5]: "DATA5"
+  ui[6]: "DATA6"
+  ui[7]: "DATA7"
+
+  uo[0]: "RES0"
+  uo[1]: "RES1"
+  uo[2]: "RES2"
+  uo[3]: "RES3"
+  uo[4]: "RES4"
+  uo[5]: "RES5"
+  uo[6]: "RES6"
+  uo[7]: "RES7"
+
+  uio[0]: "WR (in)"
+  uio[1]: "START (in)"
+  uio[2]: "SEL0 (in)"
+  uio[3]: "SEL1 (in)"
+  uio[4]: "HI (in)"
+  uio[5]: "DONE (out)"
+  uio[6]: "BUSY (out)"
+  uio[7]: "RES16 (out)"
